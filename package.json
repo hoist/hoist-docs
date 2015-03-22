@@ -16,7 +16,6 @@
   },
   "homepage": "https://github.com/hoist/hoist-docs",
   "dependencies": {
-    "aglio": "^1.17.1",
     "lodash": "^3.5.0"
   }
 }
