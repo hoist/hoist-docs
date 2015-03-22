@@ -1,0 +1,134 @@
+{
+  "name" : "Home",
+  "url" : "/",
+  "src" : "/",
+  "docs" : [
+    {
+      "name" : "Quickstart",
+      "url" : "/quickstart",
+      "src" : "/quickstart",
+      "docs" : [
+        {
+          "name" : "Deploying (Hello World)",
+          "url" : "/quickstart/hello-world",
+          "src" : "/quickstart/hello-world",
+          "docs" : [
+            {
+              "name" : "Creating a hoist.json",
+              "url" : "/quickstart/hello-world/1",
+              "src" : "/quickstart/hello-world/1.md"
+            },
+            {
+              "name" : "Write a module",
+              "url" : "/quickstart/hello-world/2",
+              "src" : "/quickstart/hello-world/2.md"
+            },
+            {
+              "name" : "Deploy it",
+              "url" : "/quickstart/hello-world/3",
+              "src" : "/quickstart/hello-world/3.md"
+            },
+            {
+              "name" : "Test",
+              "url" : "/quickstart/hello-world/4",
+              "src" : "/quickstart/hello-world/4.md"
+            }
+          ]
+        },
+        {
+          "name" : "Authorize your users",
+          "url" : "/quickstart/authorize-users",
+          "src" : "/quickstart/authorize-users",
+          "docs" : [
+            {
+              "name" : "Portal Setup",
+              "url" : "/quickstart/authorize-users/1",
+              "src" : "/quickstart/authorize-users/1.md"
+            },
+            {
+              "name" : "Install the SDK",
+              "url" : "/quickstart/authorize-users/2",
+              "src" : "/quickstart/authorize-users/2.md"
+            },
+            {
+              "name" : "Generate Bounce URL",
+              "url" : "/quickstart/authorize-users/3",
+              "src" : "/quickstart/authorize-users/3.md"
+            },
+            {
+              "name" : "Test Connection",
+              "url" : "/quickstart/authorize-users/4",
+              "src" : "/quickstart/authorize-users/4.md"
+            }
+          ]
+        },
+        {
+          "name" : "The Event Bus",
+          "url" : "/quickstart/events",
+          "src" : "/quickstart/events",
+          "docs" : [
+            {
+              "name" : "Watch for events",
+              "url" : "/quickstart/events/1",
+              "src" : "/quickstart/events/1.md"
+            },
+            {
+              "name" : "Raise Events",
+              "url" : "/quickstart/events/2",
+              "src" : "/quickstart/events/2.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "Helper Libraries",
+      "url" : "/helper-libraries",
+      "src" : "/helper-libraries",
+      "docs" : [
+        {
+          "name" : "Node",
+          "url" : "/helper-libraries/node",
+          "src" : "/helper-libraries/node"
+        },
+        {
+          "name" : "C#",
+          "url" : "/helper-libraries/c-sharp",
+          "src" : "/helper-libraries/c-sharp"
+        },
+        {
+          "name" : "PHP",
+          "url" : "/helper-libraries/php",
+          "src" : "/helper-libraries/php"
+        },
+        {
+          "name" : "Ruby",
+          "url" : "/helper-libraries/ruby",
+          "src" : "/helper-libraries/ruby"
+        }
+      ]
+    },
+    {
+      "name" : "API Docs",
+      "url" : "/api",
+      "src" : "/api",
+      "docs" : [
+        {
+          "name" : "Event API",
+          "url" : "/api/event",
+          "src" : "/api/event"
+        },
+        {
+          "name" : "Bouncer API",
+          "url" : "/api/bouncer",
+          "src" : "/api/bouncer"
+        },
+        {
+          "name" : "Module API",
+          "url" : "/api/module",
+          "src" : "/api/module"
+        }
+      ]
+    }
+  ]
+}

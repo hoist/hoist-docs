@@ -1,0 +1,21 @@
+{
+  "name": "hoist-docs",
+  "version": "1.0.0",
+  "description": "Hoist's Documentation",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hoist/hoist-docs.git"
+  },
+  "author": {
+    "name": "Hoist Apps Ltd"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoist/hoist-docs/issues"
+  },
+  "homepage": "https://github.com/hoist/hoist-docs",
+  "dependencies": {
+    "lodash": "^3.5.0"
+  }
+}
