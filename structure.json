@@ -34,77 +34,6 @@
               "src" : "/quickstart/hello-world/4.md"
             }
           ]
-        },
-        {
-          "name" : "Authorize your users",
-          "url" : "/quickstart/authorize-users",
-          "src" : "/quickstart/authorize-users",
-          "docs" : [
-            {
-              "name" : "Portal Setup",
-              "url" : "/quickstart/authorize-users/1",
-              "src" : "/quickstart/authorize-users/1.md"
-            },
-            {
-              "name" : "Install the SDK",
-              "url" : "/quickstart/authorize-users/2",
-              "src" : "/quickstart/authorize-users/2.md"
-            },
-            {
-              "name" : "Generate Bounce URL",
-              "url" : "/quickstart/authorize-users/3",
-              "src" : "/quickstart/authorize-users/3.md"
-            },
-            {
-              "name" : "Test Connection",
-              "url" : "/quickstart/authorize-users/4",
-              "src" : "/quickstart/authorize-users/4.md"
-            }
-          ]
-        },
-        {
-          "name" : "The Event Bus",
-          "url" : "/quickstart/events",
-          "src" : "/quickstart/events",
-          "docs" : [
-            {
-              "name" : "Watch for events",
-              "url" : "/quickstart/events/1",
-              "src" : "/quickstart/events/1.md"
-            },
-            {
-              "name" : "Raise Events",
-              "url" : "/quickstart/events/2",
-              "src" : "/quickstart/events/2.md"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name" : "Helper Libraries",
-      "url" : "/helper-libraries",
-      "src" : "/helper-libraries",
-      "docs" : [
-        {
-          "name" : "Node",
-          "url" : "/helper-libraries/node",
-          "src" : "/helper-libraries/node"
-        },
-        {
-          "name" : "C#",
-          "url" : "/helper-libraries/c-sharp",
-          "src" : "/helper-libraries/c-sharp"
-        },
-        {
-          "name" : "PHP",
-          "url" : "/helper-libraries/php",
-          "src" : "/helper-libraries/php"
-        },
-        {
-          "name" : "Ruby",
-          "url" : "/helper-libraries/ruby",
-          "src" : "/helper-libraries/ruby"
         }
       ]
     },
@@ -116,7 +45,7 @@
         {
           "name" : "Event API",
           "url" : "/api/event",
-          "src" : "/api/event"
+          "src" : "/api/event/event.apib"
         },
         {
           "name" : "Bouncer API",
@@ -129,6 +58,38 @@
           "src" : "/api/module"
         }
       ]
+    },
+    {
+      "name" : "Deploying",
+      "url" : "/deploying",
+      "src" : "/deploying",
+      "docs" : [
+        {
+          "name" : "Github",
+          "url" : "/deploying/github",
+          "src" : "/deploying/github.md"
+        },
+        {
+          "name" : "Cruise Control",
+          "url" : "/deploying/cruise-control",
+          "src" : "/deploying/cruise-control.md"
+        }
+      ]
+    },
+    {
+      "name" : "hoist.json Reference",
+      "url" : "/hoist-json",
+      "src" : "/hoist-json"
+    },
+    {
+      "name" : "Modules",
+      "url" : "/modules",
+      "src" : "/modules"
+    },
+    {
+      "name" : "Issues",
+      "url" : "/issues",
+      "src" : "/issues"
     }
   ]
 }

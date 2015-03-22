@@ -10,4 +10,14 @@ This tutorial will show you how to create a Hoist manifest file (hoist.json) whi
 
 Let's get started!
 
-[nav-next /quickstart/hello-world/1]
+##Source Code
+
+If you want to skip the tutorial and just download the source code, [download it here](/static/hello-world-sample.zip). 
+
+##Video
+
+There is a short video for this tutorial [here](https://www.youtube.com/embed/O0GUt8XLTdQ).
+
+[links]
+[nav-next /quickstart/hello-world/1 'Step 1' 'Creating a hoist.json']
+[/links]

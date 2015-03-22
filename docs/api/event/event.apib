@@ -1,0 +1,175 @@
+FORMAT: 1A
+HOST: https://api.hoi.io
+
+# Hoist HTTP API
+
+## URL Root
+
+All urls have the root of https://api.hoi.io
+
+## Authentication
+Hoist uses a token based authentication. All calls should be made with an Authorization header set to Hoist <apiKey> where API Key can be found in the Hoist portal at https://portal.hoist.io
+
+```http
+Authorization: Hoist 23193slakdoqw3213
+```
+
+## Response codes and errors
+Hoist uses standard REST style response codes and you should look up any response code in this table
+
+On errors the body of the request will contain a JSON error
+
+```javascript
+{
+    "code":404,
+    "message":"a more descriptive message of what went wrong"
+}
+```
+
+|Response Code | Meaning|
+|--------------|--------|
+|200 `OK`          | Self evident|
+|201 `Created`          | As `200 OK` but something was created in the call |
+|404 `Not Found`          | The endpoint or expected object cannot be found|
+|500-599 `Unexpected Server Error` | Something we didn't anticipate has happened, if you get this you should email us at support@hoist.io |
+
+#Group Events
+All API's related to Events within Hoist.
+
+#Event Stream [/events?token={token}&filterBy={filterBy}&filterValue={filterValue}&timeoutMs={timeoutMs}]
+
+A streaming API to get all events as they fire
+
+
++ Model (application/json; charset=utf-8)
+
+    + Body
+
+            {
+                "token":"{token}",
+                "events":[
+                {
+                    "eventId":"1"
+                },
+                {
+                    "eventId":"2"
+                }]
+            }
+
+
+## Retrieve Event Stream [GET]
+
+Retrieves a stream of events and sets up a stream token.
+
+* Initial requests can leave off the token and one will be generated for you.
+\
+
+* Subsequent requests with the token will return events since the token was created, a new token will be generated to continue the stream for future requests.
+
+* The token value will remain valid for 10 minutes after the token is created.
+
+eg.
+
+```http
+GET /events
+Host: https://api.hoi.io
+Content-Type: application/json
+
+{
+    "token":"abcdefg1234"
+    "events":[{
+        "eventName":"my-event"
+    }]
+}
+```
+then
+```http
+GET /events?token=abcdefg1234
+Host: https://api.hoi.io
+Content-Type: application/json
+
+{
+    "token":"<newToken>",
+    "events":[{
+        ... any events since last poll using the id
+        }]
+}
+```
+
++ Parameters
+
+    + token (optional, string, `abc123`) ... the token returned in the last request to continue where it left off
+    + filterBy (optional, 'eventName' or 'correlationId', `eventName`) ... the field to filter the stream by
+    + filterValue (optional, string, `eventid`) ... the value to filter the stream by
+    + timeoutMs (optional, number, `20000`) ... the number of ms to timeout when no events are available (will return an empty array) defaults to 10000
+
++ Request
+    + Headers
+
+            Content-Type: application/json
+            Authorization: Hoist {authKey}
+
++ Response 201
+    [Event Stream][]
+
+# Get an event [/event/{id}]
+
++ Model (application/json; charset=utf-8)
+
+    + Body
+
+            {
+                "eventId":"{id}",
+                "eventName":"my:event",
+                "correlationId":"correlationid",
+                "createdAt":"2014-12-22T03:58:00.760Z",
+                "payload":{
+                    "key":"value"
+                }
+            }
+
+## Retrieve a single Event [GET]
+
+Get the event with the specified id
+
++ Parameters
+
+    + id (string, `eventid`) ... Id of the event to return
+
++ Request
+
+    + Headers
+
+              Content-Type: application/json
+              Authorization: Hoist {authKey}
+
++ Response 200
+
+    [Get an event][]
+
+#Create an event [/event/{eventName}]
+
+## Add an event [POST]
+
+Create a new event with the name specified in url, the * request body * will be used as the payload
+
++ Parameters
+
+    + eventName (string, `my:event`) ... the type of event to create, ensure this is url encoded
+
++ Request
+
+    + Headers
+
+            Content-Type: application/json
+            Authorization: Hoist {authKey}
+
+    + Body
+      ```
+      {
+          "key":"value"
+      }
+      ```
+
++ Response 201
+    [Get an event][]

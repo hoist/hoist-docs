@@ -2,9 +2,8 @@
 
 ##Quickstart
 Learn how to do the basics in Hoist
-
-##Helper Libraries
-Connect to Hoist from your application
+[Quickstart](/docs/quickstart)
 
 ##API Docs
 Raw API documentation
+[API Docs](/docs/api)
