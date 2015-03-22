@@ -43,11 +43,6 @@
       "src" : "/api",
       "docs" : [
         {
-          "name" : "Event API",
-          "url" : "/api/event",
-          "src" : "/api/event/event.apib"
-        },
-        {
           "name" : "Bouncer API",
           "url" : "/api/bouncer",
           "src" : "/api/bouncer"

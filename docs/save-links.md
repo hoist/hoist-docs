@@ -70,3 +70,13 @@
             }
           ]
         }
+
+        {
+          "name" : "Event API",
+          "url" : "/api/event",
+          "src" : "/api/event/event.apib"
+        },
+
+        ##Event API
+Generate events on the Hoist stack, as well as subscribing to them. This API is used from within your own application.
+<div>[Event API](/docs/api/event)</div>

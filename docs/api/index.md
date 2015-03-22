@@ -1,9 +1,5 @@
 #API Docs
 
-##Event API
-Generate events on the Hoist stack, as well as subscribing to them. This API is used from within your own application.
-<div>[Event API](/docs/api/event)</div>
-
 ##Bouncer API
 Create URLs to send your users to as a replacement for OAuth. 
 <div>[Bouncer API](/docs/api/bouncer)</div>
