@@ -42,7 +42,6 @@ The endpoints section allows you to trigger events when a URL is called. The key
 - `methods` to specify which methods the endpoint will be active on, 
 - `event` to specify the event, 
 - `authenticated` to specify whether there needs to be an active session and
-- `synchronous` to require Hoist to return a result (suitable for returning JSON etc)
 
 ## Schedules
 
