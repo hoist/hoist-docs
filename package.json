@@ -1,5 +1,5 @@
 {
-  "name": "hoist-docs",
+  "name": "@hoist/docs",
   "version": "1.0.0",
   "description": "Hoist's Documentation",
   "main": "lib/index.js",
