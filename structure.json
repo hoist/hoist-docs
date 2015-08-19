@@ -72,6 +72,11 @@
       ]
     },
     {
+      "name" : "SDKs",
+      "url" : "/sdks",
+      "src" : "/sdks"
+    },
+    {
       "name" : "hoist.json Reference",
       "url" : "/hoist-json",
       "src" : "/hoist-json"
