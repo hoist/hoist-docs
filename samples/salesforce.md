@@ -13,18 +13,23 @@ To run the integration
 ### send.js
 
 ```js
-module.exports = function(event, done) {
+module.exports = function(event) {
+
+  // Find Contact object types here: 
+  // https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_contact.htm
 
   var salesforce = Hoist.connector("salesforce");
-
-  return salesforce.post("Contact", {
-      FirstName: event.payload.FirstName,
-      LastName: event.payload.LastName
+  
+  return salesforce.authorize()
+    .then(function() {
+      return salesforce.post("Contact", {
+        "FirstName": event.payload.FirstName,
+        "LastName": event.payload.LastName
+      });
     })
-    .catch(function(err) {
-      return Hoist.log("Error", err);
-    })
-    .then(done);
+    .then(function(res) {
+      return Hoist.log("Contact succesfully saved", res);
+    });
 
 };
 ```
@@ -33,10 +38,10 @@ module.exports = function(event, done) {
 
 ```json
 {
-  "modules" : {
+  "modules" : [{
     "name" : "sendToSalesforce",
     "src" : "send.js"
-  },
+  }],
   "on" : {
     "CUSTOMER:NEW" : {
       "modules" : ["sendToSalesforce"]  
