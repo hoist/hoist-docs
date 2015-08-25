@@ -43,7 +43,8 @@ When the user does something in your application that you want to send to Slack,
 
 ```js
 Hoist.event.raise("SLACKMESSAGE", {
-  message: "Send this thing to Slack!"
+  message: "Send this thing to Slack!",
+  channel: session.user.channel
 }, {bucketKey: session.user.id});
 ```
 
