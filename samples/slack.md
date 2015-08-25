@@ -27,11 +27,13 @@ Follow the instructions for each SDK on how to set the API key. For Node, it loo
 
 When the user clicks Connect, send them to a method that uses the Hoist SDK to generate a URL to authenticate them with. 
 
+```js
 redirect(Hoist.bouncer({
   connector: "slack", 
   bucketKey: session.user.id,
   returnUrl: config.appUrl + 'integrations/slack-connected'
 }));
+```
 
 In the `slack-connected` method, set the user to be ACTIVE. 
 
@@ -39,9 +41,11 @@ In the `slack-connected` method, set the user to be ACTIVE.
 
 When the user does something in your application that you want to send to Slack, raise an event:
 
+```js
 Hoist.event.raise("SLACKMESSAGE", {
   message: "Send this thing to Slack!"
 }, {bucketKey: session.user.id});
+```
 
 ## Building your Hoist integration
 
@@ -53,6 +57,7 @@ Log into the portal, in your application create a new connector for Slack. Set i
 
 Create a hoist.json with the following 
 
+```json
 {
   modules: [{
     name: 'slack',
@@ -64,11 +69,13 @@ Create a hoist.json with the following
     }
   }
 }
+```
 
 ### Writing your logic module
 
 Create slack.js with the following 
 
+```js
 module.exports = function() {
 
   return Hoist.connector("slack").get("/chat.postMessage", {
@@ -79,6 +86,7 @@ module.exports = function() {
     });
 
 };
+```
 
 ### Deploy to Hoist
 
