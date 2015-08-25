@@ -63,7 +63,7 @@ Create a hoist.json with the following
     "name": "slack",
     "src": "./slack.js"
   }],
-  on: {
+  "on": {
     "SLACKMESSAGE": {
       "modules": ["slack"]
     }
