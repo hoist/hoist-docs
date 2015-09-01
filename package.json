@@ -1,6 +1,6 @@
 {
   "name": "@hoist/docs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hoist's Documentation",
   "main": "lib/index.js",
   "repository": {
@@ -16,6 +16,16 @@
   },
   "homepage": "https://github.com/hoist/hoist-docs",
   "dependencies": {
-    "lodash": "^3.5.0"
+    "inert": "^3.0.1",
+    "lodash": "^3.10.1",
+    "marked": "^0.3.5"
+  },
+  "devDependencies": {
+    "boom": "^2.8.0",
+    "handlebars": "^4.0.0",
+    "hapi": "^9.0.3",
+    "hoek": "^2.14.0",
+    "inert": "^3.0.1",
+    "vision": "^3.0.0"
   }
 }
