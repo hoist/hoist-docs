@@ -34,6 +34,33 @@
               "src" : "/quickstart/hello-world/4.md"
             }
           ]
+        },
+        {
+          "name" : "Integrating Slack for your users",
+          "url" : "/quickstart/slack",
+          "src" : "/quickstart/slack",
+          "docs" : [
+            {
+              "name" : "Set up your Hoist integration",
+              "url" : "/quickstart/slack/1",
+              "src" : "/quickstart/slack/1.md"
+            },
+            {
+              "name" : "Authenticating your users",
+              "url" : "/quickstart/slack/2",
+              "src" : "/quickstart/slack/2.md"
+            },
+            {
+              "name" : "Raising Events",
+              "url" : "/quickstart/slack/3",
+              "src" : "/quickstart/slack/3.md"
+            },
+            {
+              "name" : "Run your integration",
+              "url" : "/quickstart/slack/4",
+              "src" : "/quickstart/slack/4.md"
+            }
+          ]
         }
       ]
     },
