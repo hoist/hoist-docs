@@ -1,0 +1,267 @@
+<html>
+
+  <head>
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Hoist{{#if organisation}} - {{organisation.name}}{{/if}}{{#if application}} - {{application.name}}{{/if}}</title>
+    <link rel="icon" type="image/ico" href="/images/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="page-header">
+    
+      {{#if user}}
+        {{#ifCond user.role "GOD"}}
+          {{#if isBackoffice}}
+            <nav id="GODMODE" class="cf">
+              <ul class="left-options"> 
+                  <li class="nav-links home {{#if isBackOfficeDashboard}}active{{/if}}">
+                    <a href="/back-office">Dashboard</a>
+                  </li>
+                  <li class="nav-links users {{#if isBackOfficeUsers}}active{{/if}}">
+                    <a href="/back-office/users">Users</a>
+                  </li>
+              </ul>
+            </nav>
+          {{/if}}
+        {{/ifCond}}
+      {{/if}}
+
+      <nav class="cf">
+
+        <ul class="left-options"> 
+            {{#if application}}
+            <li class="has-dropdown green">
+              <a href="javascript:">{{application.name}}<span class='expand-menu'></span></a>
+              <ul>
+                {{#each organisationApplications}}
+                  <li><a href="/a/{{../organisation.slug}}/{{this.slug}}">{{this.name}}</a></li>
+                {{/each}}
+                {{#if organisationApplications}}
+                <li class="break"></li>
+                {{/if}}
+                <li><a href="/a/{{organisation.slug}}/new">Add New Application</a></li>
+              </ul>
+            </li>
+            <li class="line-break">&nbsp;</li>
+            <li class="nav-links home {{#if isHome}}active{{/if}}">
+              <a href="/a/{{organisation.slug}}/{{application.slug}}"><span class="icon icon-home"></span>Home</a>
+            </li>
+            {{!-- <li class="nav-links users {{#if isUsers}}active{{/if}}">
+              <a href="/a/{{organisation.slug}}/{{application.slug}}/users"><span class="icon icon-users"></span>Users</a>
+            </li> --}}
+            <li class="nav-links buckets {{#if isBuckets}}active{{/if}}">
+              <a href="/a/{{organisation.slug}}/{{application.slug}}/buckets"><span class="icon icon-buckets"></span>Buckets</a>
+            </li>
+            <li class="nav-links settings {{#if isSettings}}active{{/if}}">
+              <a href="/a/{{organisation.slug}}/{{application.slug}}/settings"><span class="icon icon-settings"></span>Settings</a>
+            </li>
+            {{else}}
+              {{!-- <a>Home</a> --}}
+            {{/if}}
+        </ul>
+        <ul class="right-options">
+          <li class="line-break"></li>
+          <li class="docs {{#if isDocs}}active{{else}}popout{{/if}}">
+            <a href="/docs" {{#if isDocs}}{{else}}target="_blank"{{/if}}><span class="icon icon-docs"></span>Docs</a>
+          </li>
+          {{#if organisation}}
+            <li class="line-break">&nbsp;</li>
+            <li class="has-dropdown green">
+              <a href="javascript:">{{organisation.name}}<span class='expand-menu'></span></a>
+              <ul>
+                <li><a href="/a/{{organisation.slug}}">Dashboard</a></li>
+                <li><a href="/a/{{organisation.slug}}/users">Users</a></li>
+                <li class="break"></li>
+                {{#each userOrganisations}}
+                  <li><a href="/a/{{this.slug}}">{{this.name}}</a></li>
+                {{/each}}
+                <li class="break"></li>
+                <li><a href="/new">Add New Organisation</a></li>
+              </ul>
+            </li>
+            {{!-- <li class="users {{#if isUsers}}active{{/if}}">
+              <a href="/a/{{organisation.gitFolder}}/users"><span class="icon icon-users"></span>Users</a>
+            </li> --}}
+          {{/if}}
+          {{#if user}}
+            <li class="line-break line-break-profile">&nbsp;</li>
+            <li class="profile has-dropdown">
+              <a href="javascript:">{{user.name}}<span class='expand-menu'></span></a>
+              <ul>
+                <li><a href="/account">My Account</a></li>
+                <li><a href="/logout">Sign Out</a></li>
+              </ul>
+            </li>
+          {{/if}}
+        </ul>
+      </nav>
+
+      <div class="docs-header cf">
+        <span class="current">Documentation</span>
+        <ul class="secondary-nav">
+          <li {{#ifCond docs.root 'quickstart'}}class="active"{{/ifCond}}>
+            <a href="/docs/quickstart">Quickstart</a>
+          </li>
+          {{!-- <li {{#ifCond docs.root 'helper-libraries'}}class="active"{{/ifCond}}>
+            <a href="/docs/helper-libraries">Helper Libraries</a>
+          </li> --}}
+          <li {{#ifCond docs.root 'api'}}class="active"{{/ifCond}}>
+            <a href="/docs/api">API Docs</a>
+          </li>
+          <li {{#ifCond docs.root 'sdks'}}class="active"{{/ifCond}}>
+            <a href="/docs/sdks">SDKs</a>
+          </li>
+        </ul> 
+      </div>
+
+    </div>
+    
+    <header>
+      <div class="container cf">        
+        <span class="breadcrumb">
+          {{{_sections.breadcrumb}}}
+        </span>
+      </div>
+    </header>
+
+      <style type="text/css">
+      .panel {
+        overflow: hidden;
+      }
+      .panel-heading code {
+        margin-left: 3px;
+        background-color: rgba(255,255,255,0.7);
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+      }
+      .panel-heading h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      a.list-group-item:hover {
+        background-color: #f8f8f8;
+        border-left: 2px solid #555;
+        padding-left: 15px;
+      }
+      .indent {
+        display: block;
+        text-indent: 16px;
+      }
+      .list-group-item {
+        padding-left: 16px;
+      }
+      .list-group-item .toggle .open {
+        display: block;
+      }
+      .list-group-item .toggle .closed {
+        display: none;
+      }
+      .list-group-item.collapsed .toggle .open {
+        display: none;
+      }
+      .list-group-item.collapsed .toggle .closed {
+        display: block;
+      }
+      a.list-group-item:hover {
+        background-color: #f5f5f5;
+        border-left-color: #555;
+      }
+      a.list-group-item {
+        font-size: 13px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      a.list-group-item.heading {
+        font-size: 15px;
+        background-color: #ecf0f1;
+      }
+      a.list-group-item.heading:hover {
+        background-color: #f5f5f5;
+      }
+      .list-group-item.collapse {
+        display: none;
+      }
+      .list-group-item.collapse.in {
+        display: block;
+      }
+      .list-group-item a span.closed {
+        display: none;
+      }
+      .list-group-item a span.open {
+        display: block;
+      }
+      .list-group-item a.collapsed span.closed {
+        display: block;
+      }
+      .list-group-item a.collapsed span.open {
+        display: none;
+      }
+      #nav {
+        width: inherit;
+        margin-top: 38px;
+        max-width: 255px;
+        top: 0;
+        bottom: 0;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        overflow-y: auto;
+      }
+      @media (max-width: 1199px) {
+        #nav {
+          max-width: 212px;
+        }
+      }
+
+      </style>
+
+      <div class="container cf">
+
+        <div class="docs-markdown docs-col-left">
+          <div class='padder'>
+            {{{docs.content}}}
+          </div>
+        </div>
+
+        <div class="docs-col-right docs-nav">
+          <div class='padder'>  
+            {{{docs.links}}}
+          </div>
+        </div> 
+
+      </div>
+
+    <footer>
+      <div class="container cf">
+
+        <div class="col col1">
+          <ul>
+            <li class="header">Product</li>
+            <li><a href="https://hoist.io/pricing" target="_blank">Pricing</a></li>
+          </ul>
+          <ul>
+            <li class="header">Company</li>
+            <li><a href="https://hoist.io/blog" target="_blank">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col col1">
+          {{!-- <ul>
+            <li class="header">Legal</li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul> --}}
+          <ul>
+            <li class="header">Help &amp; Support</li>
+            <li><a href="javascript:Intercom('show');">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
+  </body>
+
+</html>
