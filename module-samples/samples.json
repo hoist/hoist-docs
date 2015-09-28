@@ -1,7 +1,10 @@
 {
   "samples" : {
+    "slug" : "slack-intercom-lookup",
     "name" : "Slack-Intercom Lookup",
     "src" : "./slack-intercom-lookup.js",
+    "author" : "Hoist",
+    "description" : "Ask Slack for information about a user, by asking \"Slack, tell me about email@email.com\"",
     "tags" : ["slack", "intercom"]
   }
 }
