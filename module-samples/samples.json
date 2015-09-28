@@ -1,0 +1,7 @@
+{
+  "samples" : {
+    "name" : "Slack-Intercom Lookup",
+    "src" : "./slack-intercom-lookup.js",
+    "tags" : ["slack", "intercom"]
+  }
+}
