@@ -2,7 +2,7 @@
   "samples" : [{
     "slug" : "slack-intercom-lookup",
     "name" : "Slack-Intercom Lookup",
-    "src" : "./slack-intercom-lookup.js",
+    "src" : "slack-intercom-lookup.js",
     "author" : "Hoist",
     "description" : "Ask Slack for information about a user, by asking \"Slack, tell me about email@email.com\"",
     "tags" : ["slack", "intercom"]
@@ -10,7 +10,7 @@
   {
     "slug" : "twitter-mention-slack",
     "name" : "Twitter mentions to Slack",
-    "src" : "./twitter-mention-slack.js",
+    "src" : "twitter-mention-slack.js",
     "author" : "Hoist",
     "description" : "Substitue the default Twitter/Slack integration for one that gives you more info about the tweeter.",
     "tags" : ["slack", "twitter"]
