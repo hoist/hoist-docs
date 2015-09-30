@@ -4,7 +4,7 @@
     "name" : "Slack-Intercom Lookup",
     "src" : "slack-intercom-lookup.js",
     "author" : "Hoist",
-    "description" : "Ask Slack for information about a user, by asking \"Slack, tell me about email@email.com\"",
+    "description" : "Ask Slack for information about a user, by asking \"Slack, tell me about email@email.com\".",
     "tags" : ["slack", "intercom"]
   },
   {
@@ -14,5 +14,13 @@
     "author" : "Hoist",
     "description" : "Substitue the default Twitter/Slack integration for one that gives you more info about the tweeter.",
     "tags" : ["slack", "twitter"]
+  },
+  {
+    "slug" : "simple-webhook",
+    "name" : "Simple Webhook",
+    "src" : "simple-webhook.js",
+    "author" : "Hoist",
+    "description" : "Create a webhook by posting a payload's data to a URL.",
+    "tags" : ["webhook", "xero"]
   }]
 }
